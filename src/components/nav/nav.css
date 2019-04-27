@@ -1,0 +1,10 @@
+.ButtonLink {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.ButtonLink:hover, .ButtonLink:focus {
+  outline: none;
+}
