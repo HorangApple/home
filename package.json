@@ -2,7 +2,7 @@
   "name": "react-gh-pages",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://horangapple.github.io/home",
+  "homepage": "https://horangapple.github.io/home",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
