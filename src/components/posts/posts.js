@@ -1,26 +1,39 @@
-import React, { Component } from 'react';
-import Card from './card';
+import React, { Component } from "react";
+import Card from "./card";
+import Data from "../../data/posts/list.json";
 
 class Posts extends Component {
-  constructor(props){
-    super(props)
-    this.state ={
-      sort:this.props.match.params.sort
-    }
-    console.log(this.state.sort)
+  constructor(props) {
+    super(props);
+    this.state = {
+      sort: this.props.match.params.sort,
+      data: Data
+    };
   }
-  
-  render () {
+
+  //라우팅 갱신
+  componentWillReceiveProps(nextProps) {
+    this.setState({ sort: nextProps.match.params.sort });
+  }
+
+  render() {
+    if (this.state.sort !== undefined ) {
+      console.log(this.state.data[this.state.sort])
+    }
     return (
-      <div className="row" style={{
-        "marginLeft": "0px",
-        "marginRight": "0px"}}>
+      <div
+        className="row"
+        style={{
+          marginLeft: "0px",
+          marginRight: "0px"
+        }}
+      >
         <Card />
         <Card />
         <Card />
       </div>
-    )
+    );
   }
 }
 
-export default Posts
+export default Posts;

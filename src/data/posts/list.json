@@ -1,0 +1,34 @@
+{
+  "python": [
+    {
+        "title":"첫 번째 파이썬"
+    }
+  ],
+
+  "django": [
+    {
+        "title":"첫 번째 장고"
+    }
+  ],
+
+  "javascript": [
+    {
+        "title":"첫 번째 JS"
+    }
+  ],
+  "react": [
+    {
+        "title":"첫 번째 react"
+    }
+  ],
+  "algorithm": [
+    {
+        "title":"첫 번째 algorithm"
+    }
+  ],
+  "tool": [
+    {
+        "title":"첫 번째 tool"
+    }
+  ]
+}
