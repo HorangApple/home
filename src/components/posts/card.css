@@ -1,0 +1,17 @@
+.noLink{
+  color: white;
+  text-decoration: none;
+}
+
+.noLink:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.title{
+  font-size: 1.2rem;
+}
+
+.content{
+  font-size: 0.8rem;
+}

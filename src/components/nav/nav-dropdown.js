@@ -20,7 +20,7 @@ class Dropdown extends Component {
           aria-labelledby={"navbarDropdown" + this.props.id}
         >
           {this.props.subTitles.map(title => (
-            <Link key={title+"_d_item"} to={"/" + title.toLowerCase()} className="dropdown-item">
+            <Link key={title+"_d_item"} to={'/' + title.toLowerCase()} className="dropdown-item">
               {title}
             </Link>
           ))}
@@ -29,7 +29,7 @@ class Dropdown extends Component {
           )}
           {this.props.d_titles !== undefined &&
             this.props.d_titles.map(title => (
-              <Link key={title+"_dd_item"} to={"/" + title.toLowerCase()} className="dropdown-item">
+              <Link key={title+"_dd_item"} to={'/' + title.toLowerCase()} className="dropdown-item">
                 {title}
               </Link>
             ))}

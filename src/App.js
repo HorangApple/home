@@ -1,18 +1,21 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import Nav from "./components/nav/nav";
 import Posts from "./components/posts/posts";
+import Post from "./components/posts/post";
 
 const App = () => {
+  console.log(process.env)
   return (
-    <Router>
+    <Router basename='/'>
       <div className="container">
         <Nav />
-        <Route exact path="/" component={Posts} />
+        <Route exact path='/' component={Posts} />
         <Switch>
-        <Route path="/:sort" component={Posts} />
+          <Route exact path='/:sort' component={Posts} />
+          <Route path='/:sort/:id' component={Post} />
         </Switch>
       </div>
     </Router>
