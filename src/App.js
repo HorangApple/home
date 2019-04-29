@@ -12,7 +12,7 @@ const App = () => {
     <Router basename='/'>
       <div className="container">
         <Nav />
-        <Route exact path='/' component={Posts} />
+        <Route exact path='/main' component={Posts} />
         <Switch>
           <Route exact path='/:sort' component={Posts} />
           <Route path='/:sort/:id' component={Post} />
