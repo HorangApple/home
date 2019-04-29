@@ -7,12 +7,11 @@ import Posts from "./components/posts/posts";
 import Post from "./components/posts/post";
 
 const App = () => {
-  console.log(process.env)
   return (
     <Router basename='/'>
       <div className="container">
         <Nav />
-        <Route exact path='/main' component={Posts} />
+        <Route exact path='/' component={Posts} />
         <Switch>
           <Route exact path='/:sort' component={Posts} />
           <Route path='/:sort/:id' component={Post} />

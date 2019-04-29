@@ -1,5 +1,9 @@
-.titleBg{
-  background-color: blue;
-  width: 100%;
-  height: 15vw;
+.cropping {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.cropping img {
+  max-height: initial;
+  margin-top: -15%;
 }

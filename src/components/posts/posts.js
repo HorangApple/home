@@ -10,52 +10,39 @@ class Posts extends Component {
       sort: this.props.match.params.sort,
       data: Data[this.props.match.params.sort]
     };
+    // console.log(this.state.data,"constructor")
   }
 
-  //라우팅 갱신
+  //라우팅 갱신, 같은 라우터(/:sort)사이에 정보 갱신
   componentWillReceiveProps(nextProps) {
-    this.setState({ sort: nextProps.match.params.sort });
-    console.log(nextProps.match.params.sort)
-    if (nextProps.match.params.sort === 'main') {
-      let data=[]
-      for (let one in Data){
-        data.push(Data[one][0])
-      }
-      console.log(data)
-      this.setState({data:data})
-      this.setState({sort:'all'})
-    } else{
+    if (nextProps.match.params.sort !== this.state.sort){
+      this.setState({ sort: nextProps.match.params.sort });
+      // console.log(nextProps.match.params.sort,"WillReceive")
       this.setState({data:Data[nextProps.match.params.sort]})
     }
   }
-  // componentWillMount(){
-  //   if (this.state.sort === undefined) {
-  //     let data=[]
-  //     for (let one in this.state.data){
-  //       data.push(this.state.data[one][0])
-  //     }
-  //     this.setState({data:data})
-  //     this.setState({sort:'all'})
-  //   } else{
-  //     this.setState({data:this.state.data[this.state.sort]})
-  //     console.log(this.state.data)
-  //   }
-  // }
+
+  //라우터가 다르기 때문에 constructor부터 Mount까지 실행
+  componentWillMount(){
+    if (this.state.sort === undefined) {
+      let data=[]
+      for (let one in Data){
+        for (let two of Data[one]){
+          data.push(two)
+        }
+      }
+      this.setState({data:data})
+    } 
+  }
 
   render() {
     return (
       <div key={`${this.state.sort}_posts`}>
-        <div className='titleBg'>
+        <div className='cropping mt-3 rounded'>
+          <img src={process.env.PUBLIC_URL + '/banner.png'} alt="banner" />
         </div>
-        <div
-          className="row"
-          style={{
-            marginLeft: "0px",
-            marginRight: "0px"
-          }}
-        >
+        {/* {console.log(this.state,"render") } */}
           {this.state.data.map((one,num) => (<Card key={this.state.sort+"_"+num} post={one} />))}
-        </div>
       </div>
     );
   }

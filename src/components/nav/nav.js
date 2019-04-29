@@ -26,7 +26,7 @@ class Nav extends Component {
         >
           <ul className="navbar-nav ml-auto bg-white rounded px-3">
             <li className="nav-item ">
-              <Link className="nav-link dropdown-item" to="/main">
+              <Link className="nav-link dropdown-item" to="/">
                 Main
               </Link>
             </li>
