@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 class Nav extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-md py-3 rounded sticky-top" style={{"backgroundColor": "#FF6E00"}}>
+      <nav className="navbar navbar-expand-md py-3 rounded" style={{"backgroundColor": "#FF6E00"}}>
         <span className="navbar-brand text-white">HorangApple</span>
         <button
           className="navbar-toggler bg-white navbar-light ButtonLink rounded"

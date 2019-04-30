@@ -331,12 +331,6 @@ module.exports = function(webpackEnv) {
               use: [
                   {
                       loader: require.resolve('html-loader')
-                  },
-                  {
-                      loader: require.resolve('markdown-loader'),
-                      options: {
-                          renderer
-                      }
                   }
               ]        
             },

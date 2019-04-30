@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Markdown from 'markdown-to-jsx';
 import styled from 'styled-components';
 
-const mdFile = require('../../data/posts/python/test.md');
+const mdFile = require('../../data/posts/django/Django_쟝고.md');
 
 const MainTitle = styled.h1`
   color: #2980b9;
@@ -93,12 +93,13 @@ const options = {
 
 class Post extends Component {
   render() {
+    console.log(mdFile)
     return (
       <div className="container">
         <br />
         <h1 className="text-center">python</h1>
         <br />
-        <Markdown options={options}>
+        <Markdown >
           {mdFile}
         </Markdown>
       </div>
